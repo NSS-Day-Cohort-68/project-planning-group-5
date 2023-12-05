@@ -1,3 +1,5 @@
+const readline = require("readline-sync")
+
 const items = [
   {
     id: 1,
@@ -35,11 +37,25 @@ const displayItems = () => {
 };
 
 // add an item
+const addItem = () => {
+//collect input from the user 
+console.log("We are gonna add an item WOOHOO")
+let userItemName = readline.question("What is the name of the item?: ")
+let userQuantity = readline.question("How many are there?: ")
+//create a new item based off the users input
+const userItem = { 
+  id: 6,
+  name: userItemName,
+  quantity: userQuantity,
+}
+//add the item to our inventory  
+items.push(userItem)
+}
 
 // edit an item's details
 
 // display low inventory items
 
 module.exports = {
-  displayItems,
+  displayItems, addItem
 };

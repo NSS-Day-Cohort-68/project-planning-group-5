@@ -1,5 +1,6 @@
 const readline = require("readline-sync");
-const { displayItems } = require("./items.js");
+const { displayItems , addItem } = require("./items.js");
+
 // display some kind of greeting to the user
 console.log("Hello, this is the inventory manager.");
 // display options and do whatever option the user chooses
@@ -22,6 +23,8 @@ while (currentOption !== "6") {
   currentOption = readline.question("Your choice: ");
   if (currentOption === "1") {
     displayItems();
+  } else if (currentOption === "2") {
+    addItem();
   } else if (currentOption === "6") {
     console.log("Goodbye!");
   } else {
