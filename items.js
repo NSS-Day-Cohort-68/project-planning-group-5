@@ -96,8 +96,28 @@ const editItem = () => {
   console.log("Item updated")
 }
 
-// display low inventory items
+//create function to remove item
+const removeItem = () => {
+  // Present list of items to choose from
+  displayItems();
+  // Ask user ID of item they want removed
+  let itemId = readline.question("What is the id of the item you want to remove?: ")
+  // Find item
+  let itemToRemove;
+    for (const item of items) {
+      if (item.id == itemId) {
+        itemToRemove = item;
+      }
+    }
+    let indexOfRemovedItem = items.indexOf(itemToRemove);
+    items.splice(indexOfRemovedItem, 1);
 
+    // Remove chosen item from array
+    console.log("Item Removed");
+  }
+  
+  // display low inventory items
+  
 module.exports = {
-  displayItems, addItem, editItem
+  displayItems, addItem, editItem, removeItem
 };

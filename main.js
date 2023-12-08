@@ -1,5 +1,5 @@
 const readline = require("readline-sync");
-const { displayItems , addItem, editItem } = require("./items.js");
+const { displayItems , addItem, editItem, removeItem } = require("./items.js");
 
 // display some kind of greeting to the user
 console.log("Hello, this is the inventory manager.");
@@ -29,7 +29,12 @@ while (currentOption !== "6") {
     console.log("Goodbye!");
   } else if (currentOption === "4") {
     editItem();
-  } else {
+  } else if (currentOption === "3") {
+    removeItem();3
+  }
+  
+  else {
     console.log(`you chose ${currentOption}`);
   }
 }
+
